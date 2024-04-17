@@ -1,0 +1,77 @@
+.filters-group-container {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 768px) {
+  .filters-group-container {
+    width: 30%;
+    max-width: 350px;
+    margin-top: 48px;
+    flex-shrink: 0;
+  }
+}
+
+/* Write your CSS here */
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  border: none;
+  margin-left: 10px;
+}
+.list {
+  margin: 5px;
+  list-style: none;
+  align-self: flex-start;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+}
+.list-title {
+  color: #12022f;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 24px;
+}
+.catergory {
+  color: #475569;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+}
+.rating-img {
+  width: 60%;
+}
+.rating-list-item {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating-up {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 14px;
+}
+.clear-btn {
+  color: #0967d2;
+  background-color: transparent;
+  border: solid 2px #0967d2;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 10px;
+  width: 120px;
+}
+.search{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+}
