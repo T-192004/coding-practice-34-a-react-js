@@ -8,6 +8,10 @@ const FiltersGroup = props => {
     updateSearchValue,
     updateActiveCategory,
     updateActiveRating,
+    activeCategoryId,
+    activeRatingId,
+    clearFilters,
+    enterSearch,
   } = props
   const onclickUpdateCategoryItem = categoryId => {
     updateActiveCategory(categoryId)
@@ -15,11 +19,18 @@ const FiltersGroup = props => {
   const onclickUpdateRatingsItem = ratingId => {
     updateActiveRating(ratingId)
   }
+  const onClickUpdateClearFilters = () => {
+    clearFilters()
+  }
   const categoryName = eachCategory => {
     const {name, categoryId} = eachCategory
+    const activeClass = activeCategoryId === categoryId ? 'active' : ''
     return (
-      <li onClick={onclickUpdateCategoryItem(categoryId)} key={categoryId}>
-        <p className="catergory">{name}</p>
+      <li
+        onClick={() => onclickUpdateCategoryItem(categoryId)}
+        key={categoryId}
+      >
+        <p className={`catergory ${activeClass}`}>{name}</p>
       </li>
     )
   }
@@ -28,15 +39,21 @@ const FiltersGroup = props => {
   }
   const ratingImg = eachRating => {
     const {imageUrl, ratingId} = eachRating
+    const activeClass = ratingId === activeRatingId ? 'active' : ''
     return (
       <li
         className="rating-list-item"
-        onClick={onclickUpdateRatingsItem(ratingId)}
+        onClick={() => onclickUpdateRatingsItem(ratingId)}
       >
-        <img className="rating-img" src={imageUrl} alt="stars" />
-        <p className="rating-up">&up</p>
+        <img className="rating-img" src={imageUrl} alt={`rating ${ratingId}`} />
+        <p className={`rating-up ${activeClass}`}>&up</p>
       </li>
     )
+  }
+  const onEnterSearchInput = event => {
+    if (event.key === 'Enter') {
+      enterSearch()
+    }
   }
   return (
     <div className="filters-group-container">
@@ -46,6 +63,7 @@ const FiltersGroup = props => {
           type="search"
           placeholder="Search"
           onChange={onchangeUpdateSearchValue}
+          onKeyDown={onEnterSearchInput}
         />
         <BsSearch className="search-icon" />
       </div>
@@ -57,7 +75,9 @@ const FiltersGroup = props => {
         <h1 className="list-title">Rating</h1>
         {ratingsList.map(eachRating => ratingImg(eachRating))}
       </ul>
-      <button className="clear-btn">Clear Filters</button>
+      <button className="clear-btn" onClick={onClickUpdateClearFilters}>
+        Clear Filters
+      </button>
     </div>
   )
 }
