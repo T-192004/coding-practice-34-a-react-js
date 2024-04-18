@@ -68,10 +68,13 @@
   padding: 10px;
   width: 120px;
 }
-.search{
+.search {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   background-color: transparent;
+}
+.active {
+  color: #0967d2;
 }
