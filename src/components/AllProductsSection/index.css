@@ -48,3 +48,42 @@
   flex-wrap: wrap;
   padding-left: 0;
 }
+.no-product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.no-products-img {
+  width: 80%;
+  height: 80%;
+}
+.no-products-heading {
+  color: #12022f;
+  font-family: 'Roboto';
+  font-size: 28px;
+}
+.no-products-description {
+  color: #64748b;
+  font-family: 'Roboto';
+  font-size: 28px;
+}
+.products-error-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.products-failure-img {
+  width: 80%;
+  height: 80%;
+}
+.product-failure-heading-text {
+  color: #12022f;
+  font-family: 'Roboto';
+  font-size: 28px;
+}
+.product-failure-description {
+  color: #64748b;
+  font-family: 'Roboto';
+  font-size: 28px;
+}
